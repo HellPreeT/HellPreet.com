@@ -1,0 +1,52 @@
+<DOCTYPE! html>
+    
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="wihth=device-width, initial-scale = 1.0">
+        <title>HELLGAMING.in/registerForRoom</title>
+    </head>
+    <body>
+        <div class="form">
+            <div class="cont1">
+                <center><h1><ul>TDM MATCH REGISTRATION</ul></h1></center>
+            </div>
+            <center><form method="POST" name="google-sheet">
+                your name: <br>
+                <input type="text" id="name" name="your name:" placeholder="your name">
+                <br>
+                email address: <br>
+                <input type="text" id="email" name="email:" placeholder="your email">
+                <br>
+                your number: <br>
+                <input type="number" id="number" name="your number:" placeholder="your number">
+                <br>
+              in game name: <br>
+                <input type="text" id="gameName" name="name:" placeholder="bgmi player name">
+                <br>
+                <button onclick="onClick()" id="submit" value="submit" name="submit">submit</button>
+            </form>
+        </center>
+           </div>
+
+           <script>
+               function onClick() {
+                   window.open("finish.html");
+               }
+           </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzBKYpOk_Bzjdps_GTIFYh4qXbDBWxyJlTJOscj9-svngI-pxGB65LXMxgCjGmKSHU-FQ/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+    </body>
+</html>
